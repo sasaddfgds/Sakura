@@ -1,0 +1,183 @@
+:root {
+    --bg-gradient: linear-gradient(135deg,#fdfbfb 0%, #ebedee 100%);
+    --accent-pink: #ffb7b2;
+    --deep-text: #2c3e50;
+    --glaas-bg: rgba(255, 255, 255, 0.25);
+    --glaas-border: rgba(255, 255, 255, 0.5);
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #1a1a1a;
+    color: var(--deep-text);
+    overflow-x: hidden;
+}
+/* Sakura Canvas Styling */
+#sakuraCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to bottom, #1a0b14, #4a192c);
+}
+/*Navigation
+----------------------------------*/
+.glass-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 2px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+.nav-links a {
+    text-decoration:none;
+    color: #fff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: var(--accent-pink);
+    text-shadow: 0 0 10px var(--accent-pink);
+}
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+.hero-content p {
+    color: #e0e0e0;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+/* Button Styling */
+.btn-primary {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--accent-pink);
+    color: #fff;
+    text-decoration:none;
+    text-transform:uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+    background: rgba(255, 183, 178m 0.1);   
+}
+.btn-primary:hover {
+    background: var(--accent-pink);
+    color: #000;
+    box-shadow: 0 0 20px var(--accent-pink);
+}
+/*Section Styling*/
+.content-section, .gallery-section {
+    min-height: 60vh;
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 4rem 2rem;
+}
+/* Glass card */
+.glass-card {
+    background: var(--glaas-bg);
+    border: 1px solid var(--glaas-border);
+    padding: 4rem;
+    border-radius: 20px;
+    max-width: 800px;
+    color: #fff;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+.glass card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+.card {
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    transition: transform 0.4s, background 0.4s;
+    cursor: pointer;
+}
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 183, 178, 0.15);
+    border-color: var(--accent-pink);
+}
+footer { 
+    text-align: center;
+    padding: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+}
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+.delay-1 { animation-delay: 0.3s;}
+.delay-2 { animation-delay: 0.6s;}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+.scroll-reveal.visible { 
+    opacity: 1;
+    transform: translateY(0);
+}
